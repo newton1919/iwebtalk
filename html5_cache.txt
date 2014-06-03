@@ -1,0 +1,2 @@
+demo.appcache文件指定该缓存哪些静态文件，但是本身html页面也是缓存的，不会问服务器要，除非更改demo.appcache中版本信息，才会reload
+但是reload时那些静态文件不会reload，故还是有好处的
