@@ -18,6 +18,10 @@ def index(request):
     #response.set_cookie('django_language', settings.LANGUAGE_CODE,expires=_one_year())
     return response
 
+def get_msg(request):
+    data = request.GET.get('data',None)
+    return shortcuts.HttpResponse(data)
+
 def cache_html(request):
     static_dir = settings.STATICFILES_DIRS[0]
     cache_file = os.path.join(static_dir, "demo.appcache")

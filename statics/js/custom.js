@@ -3,13 +3,21 @@ $.mobile.document.on( "click", ".more", function( evt ) {
     evt.preventDefault();
 });
 
-$.mobile.document.on( "click", ".user", function( evt ) {
-    //$( "#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
-    evt.preventDefault();
+$.mobile.document.on( "click", ".user_obj", function( evt ) {
+	$.mobile.changePage( "#second", { transition: "none", changeHash: true });
 });
 
+$.mobile.document.on( "click", "#ajax-post", function( evt ) {
+	$.get("get_msg",{data:"tom"}, function(data){
+		alert(data);
+	});
+});
 
 $(function(){
+	$("#second").on( "pageshow", function( evt ) {
+		console.log($( ":mobile-pagecontainer" ).pagecontainer( "getActivePage" ).attr("id"));
+	});
+	
 	var userWidth = $(".ui-content").width()-44;
     $(".user").css("width",userWidth);
     
