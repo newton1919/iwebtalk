@@ -64,3 +64,4 @@ function compare(a,b){
 	var b_after = pinyin.getCamelChars(b).toLowerCase();
 	return a_after > b_after;
 }
+//aaaaaaa
